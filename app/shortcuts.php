@@ -12,28 +12,29 @@ function callback($callback, $m = NULL)
 }
 
 
+# dev - Declared in Tracy's source
 /**
  * Nette\Diagnostics\Debugger::dump() shortcut.
  */
-function dump($var)
-{
-	foreach (func_get_args() as $arg) {
-		Debugger::dump($arg);
-	}
-	return $var;
-}
+// function dump($var)
+// {
+// 	foreach (func_get_args() as $arg) {
+// 		Debugger::dump($arg);
+// 	}
+// 	return $var;
+// }
 
 
 /**
  * Nette\Diagnostics\Debugger::log() shortcut.
  */
-function dlog($var = NULL)
-{
-	if (func_num_args() === 0) {
-		Debugger::log(new Exception, 'dlog');
-	}
-	foreach (func_get_args() as $arg) {
-		Debugger::log($arg, 'dlog');
-	}
-	return $var;
-}
+// function dlog($var = NULL)
+// {
+// 	if (func_num_args() === 0) {
+// 		Debugger::log(new Exception, 'dlog');
+// 	}
+// 	foreach (func_get_args() as $arg) {
+// 		Debugger::log($arg, 'dlog');
+// 	}
+// 	return $var;
+// }

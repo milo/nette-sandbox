@@ -40,6 +40,9 @@ class UserManager extends Nette\Object implements Nette\Security\IAuthenticator
 		list($username, $password) = $credentials;
 		$password = self::removeCapsLock($password);
 
+		# dev - fake login
+		return new Nette\Security\Identity(1, $username, $credentials);
+
 		$row = $this->database->table(self::TABLE_NAME)->where(self::COLUMN_NAME, $username)->fetch();
 
 		if (!$row) {

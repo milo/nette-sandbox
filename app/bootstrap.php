@@ -20,4 +20,10 @@ $configurator->addConfig(__DIR__ . '/config/config.local.neon');
 
 $container = $configurator->createContainer();
 
+# dev - panel dump
+$container->getService('nette.database.default')->query('SELECT 1');
+
+$user = $container->getByType('Nette\Security\User');
+$user->login('ghost', '*****');
+
 return $container;
